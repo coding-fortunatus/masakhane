@@ -21,8 +21,8 @@
             <div class="collapse navbar-collapse" id="myNav">
                 <ul class="navbar-nav ms-auto">
 
-                    <li class="nav-item"><a href="index.html" class="nav-link">Video Gallery</a></li>
-                    <li class="nav-item"><a href="new_web.html" class="nav-link">Team</a></li>
+                    <li class="nav-item"><a href="index.php" class="nav-link">Team</a></li>
+                    <li class="nav-item"><a href="video.php" class="nav-link">Gallery</a></li>
                 </ul>
            </div>
         </div>
