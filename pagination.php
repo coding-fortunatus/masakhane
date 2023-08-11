@@ -57,9 +57,12 @@
     
     // Generate pagination links
     echo "<div class='mt-3'>";
-    for ($page = 1; $page <= $totalPages; $page++) {
-        $activeClass = ($page == $currentPage) ? 'active' : '';
-        echo "<a class='btn btn-primary mr-2 $activeClass' href='?page=$page'>$page</a>";
+    $start = max(1, $currentPage - 4);
+    $end = min($totalPages, $currentPage + 4);
+    for ($p=$start; $p<=$end; $p++){
+    // for ($page = 1; $page <= $totalPages; $page++) {
+        $activeClass = ($p == $currentPage) ? 'active' : '';
+        echo "<a class='btn btn-primary mr-2 mb-2 $activeClass' href='?page=$p'>$p</a>";
     }
     echo "</div>";
     
