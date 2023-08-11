@@ -5,100 +5,79 @@
     </div>
     <div class="contain m-10">
     <div class="row g-3 m-3">
-    <div class="modal fade" id="det1">
-        <div class="modal-dialog" style="width: 60vw;" >
-            <div class="modal-content ">*
-                <div class="modal-body" style="position: relative; padding: 0;">
-                    <a href="#" class="btn btn-close" data-bs-dismiss="modal"></a>
-                    <div class="details">
-                        <img class="center rounded-circle" src="images/2.jpg" alt="">
-                    </div>
-                        <div class="">
-                            <div class="cent">
-                                <p class="name" ><strong>Emeka Felix Onwuegbuzia</strong><br>NLP/ML tasks</p>
-                                <hr>
-                            </div>
-                            <section style="padding-left: 20px;">
-                            <p><strong>Nationality:</strong>  Nigeria</p>
-                            <p><strong>Affiliation:</strong>  University of Ibadan</p>
-                            <p><strong>Language(s) spoken:</strong>  Igbo, Nigerian pidgin, English</p>
-                            <p><strong>Language(s) working on:</strong> Nigerian Pidgin, Igbo, Yoruba</p>
-                            <p><strong>Interests:</strong> Jollof rice, Afrobeats</p>
-                            </section>
-                            <hr>
-                        </div>
-                </div> 
-            </div> 
-        </div>           
-    </div>
+   
     </div>
     </div>
     <div class="container m-10" style="background-color: transparent!important;">
-    <div class="row g-3 m-3">
-    <div class="col-sm-6 col-lg-3 col-md-4">
-                   
-        <div class="card" style="border-style: hidden;" >
-            <div class="card-body text-center">
-                <img data-bs-toggle="modal" data-bs-target="#det1" src="images/2.jpg"alt="" class="rounded-circle mb-3"> 
-                <h3 class="card-title mb-1"></h3>
-                <p><i>Lorem ipsum dolor sit.</i></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 col-md-4">
-                   
-        <div class="card" style="border-style: hidden;" >
-            <div class="card-body text-center">
-                <img data-bs-toggle="modal" data-bs-target="#det1" src="images/2.jpg"alt="" class="rounded-circle mb-3"> 
-                <h3 class="card-title mb-1"></h3>
-                <p><i>Lorem ipsum dolor sit.</i></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 col-md-4">
-                   
-        <div class="card" style="border-style: hidden;" >
-            <div class="card-body text-center">
-                <img data-bs-toggle="modal" data-bs-target="#det1" src="images/2.jpg"alt="" class="rounded-circle mb-3"> 
-                <h3 class="card-title mb-1"></h3>
-                <p><i>Lorem ipsum dolor sit.</i></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 col-md-4">
-                   
-        <div class="card" style="border-style: hidden;" >
-            <div class="card-body text-center">
-                <img data-bs-toggle="modal" data-bs-target="#det1" src="images/2.jpg"alt="" class="rounded-circle mb-3"> 
-                <h3 class="card-title mb-1"></h3>
-                <p><i>Lorem ipsum dolor sit.</i></p>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="det1">
-        <div class="modal-dialog" style="width: 60vw;" >
-            <div class="modal-content ">
-                <div class="modal-body " style="position: relative; padding: 0;">
-                    <a href="#" class="btn btn-close" data-bs-dismiss="modal"></a>
-                    <div class="details" style="width: 50%; padding-left: 35% ; padding-top: 5%;">
-                        <img class=" text-center rounded-circle" src="images/2.jpg" style="width: 150px; height: 150px;" alt="">
-                    </div>
-                        <div class="">
-                                <p class="name"><b>Emeka Felix Onwuegbuzia</b><br>NLP/ML tasks</p>
-                                <hr>
-                            <section style="padding-left: 20px;">
-                            <p><strong>Nationality:</strong>  Nigeria</p>
-                            <p><strong>Affiliation:</strong>  University of Ibadan</p>
-                            <p><strong>Language(s) spoken:</strong>  Igbo, Nigerian pidgin, English</p>
-                            <p><strong>Language(s) working on:</strong> Nigerian Pidgin, Igbo, Yoruba</p>
-                            <p><strong>Interests:</strong> Jollof rice, Afrobeats</p>
-                            </section>
+        <div class="row g-3 m-3">
+            <?php
+            $query = "SELECT * FROM members";
+            $get_data = mysqli_query($conn, $query);
+            while($row = mysqli_fetch_assoc($get_data))
+            {
+                $fullname = $row['fullname'];
+                $affiliation = $row['affiliation'];
+                $nationality = $row['nationality'];
+                $languages_spoken = $row['languages_spoken'];
+                $languages_working_on = $row['languages_working_on'];
+                $country_interesting = $row['country_interesting'];
+                $nlp_ml_tasks = $row['nlp_ml_tasks'];
+                $images = $row['images']; ?>
+
+                <div class="col-sm-6 col-lg-3 col-md-4">           
+                    <div class="card" style="border-style: hidden;" >
+                        <div class="card-body text-center">
+                            <img data-bs-toggle="modal" data-bs-target="#det1" src="<?php echo $images; ?>" alt="" class="rounded-circle mb-3"> 
+                            <h3 class="card-title mb-1"></h3>
+                            <p><i><?php echo $fullname; ?></i></p>
                         </div>
-                </div> 
-            </div> 
-        </div>           
-    </div>
-    </div>
+                    </div>
+                </div>
+
+                <?php
+                if ($affiliation && $nationality && $languages_spoken && $languages_working_on && $country_interesting && $nlp_ml_tasks) {
+                    # code...
+                    ?>
+                    
+                    <!-- Modals -->
+                    <div class="modal fade" id="det1">
+                        <div class="modal-dialog" style="width: 60vw;" >
+                            <div class="modal-content ">
+                                <div class="modal-body" style="position: relative; padding: 0;">
+                                    <a href="#" class="btn btn-close" data-bs-dismiss="modal"></a>
+                                    <div class="details">
+                                        <img class="center rounded-circle" src="<?php echo $images; ?>" alt="">
+                                    </div> 
+                                        <div class="cent">
+                                            <p class="name" ><strong><?php echo $fullname; ?></strong><br><?php echo $nlp_ml_tasks; ?></p>
+                                            <hr>
+                                        </div>
+                                        <section style="padding-left: 20px;">
+                                        <p><strong>Nationality:</strong> <?php echo $nationality; ?></p>
+                                        <p><strong>Affiliation:</strong> <?php echo $affiliation; ?></p>
+                                        <p><strong>Language(s) spoken:</strong> <?php echo $languages_spoken; ?></p>
+                                        <p><strong>Language(s) working on:</strong> <?php echo $languages_working_on; ?></p>
+                                        <p><strong>Interests:</strong> <?php echo $country_interesting; ?></p>
+                                        </section>
+                                    <hr>  
+                                </div> 
+                            </div> 
+                        </div>           
+                    </div>
+                    <!-- End of Modal -->
+                    
+                    <?php    
+                    
+                }
+
+                ?>
+                <?php
+            }
+            ?>
+
+
+    
+        </div>
     </div>
 
     <div>

@@ -1,6 +1,5 @@
 *{
-    margin: 0;
-    padding: 0;
+   
     text-transform: capitalize;
     font-family: poppins;
     font-weight: normal;
@@ -13,6 +12,9 @@
 }
 .navbar{
     background-color: #f2f0e9!important;
+}
+.navbar-brand{
+    padding-top: 20px;
 }
 
 .contain{
