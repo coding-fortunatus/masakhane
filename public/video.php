@@ -13,7 +13,7 @@
                             $video_link = $row['video_link'];
 
                     ?>
-                    <video src="video/v1.mp4" controls muted autoplay></video>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fjOdtSu4Lm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <h3 class="title"><?php echo $video_title; ?></h3>
                     <p class="desc"><?php echo $description; ?></p>
                 </div>
@@ -48,10 +48,28 @@
 
 
 
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/sweetalert2.all.js"></script>
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/script.js"></script>
+    <script>
+        let listVideo = document.querySelectorAll('.video-list .vid');
+        let mainVideo = document.querySelector('.main-video video');
+        let title = document.querySelector('.main-video .title');
+        let desc = document.querySelector('.main-video .desc');
+
+        listVideo.forEach(video => {
+            video.onclick = () =>{
+                listVideo.forEach(vid => vid.classList.remove('active'));
+                video.classList.add('active');
+                if(video.classList.contains('active'))
+                {
+                    let src = video.children[0].getAttribute('src');
+                    mainVideo.src = src;
+                    let text = video.children[1].innerHTML;
+                    title.innerHTML = text;
+                    let des = video.children[2].innerHTML;
+                    desc.innerHTML = des;
+                }
+            }
+        });
+    </script>
     
     
 </body>
