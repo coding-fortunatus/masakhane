@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    font-family: poppins;
+    font-weight: normal;
+}
+.heading{
+    color: #444;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+
+.contain{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 5px 5%;
+}
+
+.contain .main-video{
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+.contain .main-video video{
+    width: 100%;
+    border-radius: 5px;
+}
+.contain .main-video .title{
+    color: #333;
+    font-size: 23px;
+    padding: 15px;
+    padding-bottom: 15px;
+}
+
+.contain .video-list{
+    background: #fff;
+    border-radius: 5px;
+    height: 520px;
+    overflow-y: scroll;
+}
+.contain .video-list::-webkit-scrollbar{
+    width: 7px;
+}
+.contain .video-list::-webkit-scrollbar-track{
+    border-radius: 50px;
+    background: #ccc;
+}
+.contain .video-list::-webkit-scrollbar-thumb{
+    background: #667;
+    border-radius: 50px;
+}
+
+.contain .video-list .vid video{
+    width: 100px;
+    border-radius: 5px;
+}
+
+.contain .video-list .vid{
+    display: grid;
+    align-items: start;
+    gap: 15px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.contain .video-list .vid:hover{
+    background: #eee;
+}
+.contain .video-list .vid .active{
+    background: #2980b9;
+}
+.contain .video-list .vid .active .title{
+    color: #fff;
+}
+.contain .video-list .vid .title{
+    color: #333;
+    font-size: 17px;
+}
+.contain .video-list .vid p{
+    font-size: 10px;
+}
+.contain .video-list .vid .title, .contain .video-list .vid p{
+    display: grid;
+    
+}
+
+@media(max-width:991px)
+{
+    .contain{
+        grid-template-columns: 1.5fr 1fr;
+        padding: 10px;
+    }
+    .contain .video-list .vid video{
+        width: 100px;
+        border-radius: 5px;
+    }
+}
+
+@media(max-width:768px){
+    .contain{
+        grid-template-columns: 1fr;
+    }
+    .contain .video-list .vid video{
+        width: 100px;
+        border-radius: 5px;
+    }
+}

@@ -1,5 +1,29 @@
-
-<?php require_once "./include/header.php"; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <span class="navbar-brand"><img class="logo" src="images/masa.png" alt="">Masakhane</span>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="myNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Community</a></li>
+                    <li class="nav-item"><a href="new_web.html" class="nav-link">Team</a></li>
+                </ul>                
+            </div>
+        </div>
+    </nav>
+    <div class="bg-light text-dark p-5 text-center h1" id="nav">
+        <h3 class="title" style="font-size: 3rem;">Masakhane Community</h3>
+    </div>
     <div class="contain m-10">
     <div class="row g-3 m-3">
     <div class="modal fade" id="det1">
