@@ -28,6 +28,4 @@
            </div>
         </div>
     </nav>
-    <div class="bg-light text-dark p-5 text-center h1" id="nav">
-        <h3 class="title" style="font-size: 3rem;">Masakhane Community</h3>
-    </div>
+   

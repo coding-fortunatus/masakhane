@@ -1,11 +1,14 @@
 
 <?php require_once "./include/header.php"; ?>
+    <div class="bg-light text-dark p-5 text-center h1" id="nav">
+        <h3 class="title" style="font-size: 3rem;">Masakhane Community</h3>
+    </div>
     <div class="contain m-10">
     <div class="row g-3 m-3">
     <div class="modal fade" id="det1">
         <div class="modal-dialog" style="width: 60vw;" >
             <div class="modal-content ">*
-                <div class="modal-body " style="position: relative; padding: 0;">
+                <div class="modal-body" style="position: relative; padding: 0;">
                     <a href="#" class="btn btn-close" data-bs-dismiss="modal"></a>
                     <div class="details">
                         <img class="center rounded-circle" src="images/2.jpg" alt="">
