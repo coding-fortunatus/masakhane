@@ -30,8 +30,9 @@
     border-radius: 5px;
     padding: 10px;
 }
-.contain .main-video video{
-    width: 100%;
+.contain .main-video .video iframe{
+    width: 500vw;
+    height: 1000;
     border-radius: 5px;
 }
 .contain .main-video .title{
@@ -108,7 +109,7 @@
         grid-template-columns: 1.5fr 1fr;
         padding: 10px;
     }
-    .contain .video-list .vid video{
+    .contain .video-list .vid iframe{
         width: 100px;
         border-radius: 5px;
     }
