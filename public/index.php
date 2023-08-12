@@ -12,10 +12,11 @@
         <div class="row g-3 m-3">
             
             <?php
-            $query = "SELECT * FROM members";
+            $query = "SELECT * FROM members LIMIT 32";
             $get_data = mysqli_query($conn, $query);
             while($row = mysqli_fetch_assoc($get_data))
             {
+                $id = $row['id'];
                 $fullname = $row['fullname'];
                 $affiliation = $row['affiliation'];
                 $nationality = $row['nationality'];
@@ -28,11 +29,10 @@
                 <div class="col-sm-6 col-lg-3 col-md-4">           
                     <div class="card" style="border-style: hidden;" >
                         <div class="card-body text-center">
-                            <img data-bs-toggle="modal" data-bs-target="#det1" src="<?php echo $images; ?>" alt="" class="rounded-circle mb-3"> 
+                            <img data-bs-toggle="modal" data-bs-target="#det1<?php echo $id; ?>" src="<?php echo $images; ?>" alt="" class="rounded-circle mb-3"> 
                             <h3 class="card-title mb-1"></h3>
                             <p><i><?php echo $fullname; ?></i></p>
-                            <p><?php echo $languages_spoken; ?></p>
-                            <p><?php echo $affiliation; ?></p>
+                           
                             <?php
 
                             if ($affiliation == "" || $nationality == "" || $languages_spoken == "" || $languages_working_on == "" || $country_interesting == "" || $nlp_ml_tasks == "") {
@@ -42,10 +42,10 @@
                             {
                                 ?>
                                 <!-- Modals -->
-                                <div class="modal fade" id="det1">
-                                    <div class="modal-dialog" style="width: 60vw;" >
+                                <div class="modal fade" id="det1<?php echo $id; ?>">
+                                    <div class="modal-dialog">
                                         <div class="modal-content ">
-                                            <div class="modal-body" style="position: relative; padding: 0;">
+                                            <div class="modal-body">
                                                 <a href="#" class="btn btn-close" data-bs-dismiss="modal"></a>
                                                 <div class="details">
                                                     <img class="center rounded-circle" src="<?php echo $images; ?>" alt="">
