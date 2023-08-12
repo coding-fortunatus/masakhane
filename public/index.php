@@ -12,8 +12,9 @@
         <?php
             $query = "SELECT * FROM members";
             $get_data = mysqli_query($conn, $query);
-            while($row = mysqli_fetch_assoc($get_data))
-            {
+            
+            while($row = mysqli_fetch_assoc($get_data)) {
+                $member_id = $row['id'];
                 $fullname = $row['fullname'];
                 $affiliation = $row['affiliation'];
                 $nationality = $row['nationality'];
@@ -27,8 +28,8 @@
         <div class="col-sm-6 col-lg-3 col-md-4">
             <div class="card" style="border-style: hidden;">
                 <div class="card-body text-center">
-                    <img data-bs-toggle="modal" data-bs-target="#det1" src="<?php echo $images; ?>" alt=""
-                        class="rounded-circle mb-3">
+                    <img data-bs-toggle="modal" data-bs-target="#det1" id="<?php echo $member_id; ?>"
+                        src="<?php echo $images; ?>" alt="" class="rounded-circle mb-3">
                     <h3 class="card-title mb-1"></h3>
                     <p><i><?php echo $fullname; ?></i></p>
                 </div>
@@ -79,35 +80,16 @@
     </div>
 </div>
 
-<div>
-    <nav aria-label="Page navigation">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a> </li>
-            <li class="page-item"><a class="page-link" href="#">2</a> </li>
-            <li class="page-item"><a class="page-link" href="#">3</a> </li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-</div>
 <script src="js/sweetalert2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/all.min.js"></script>
 <script>
-function myFunction() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
+const autoscroll = () => {
+    window.scrollBy(0, 20);
+    let scrolldelay = setTimeout(autoscroll, 20)
 }
+autoscroll();
 </script>
 </body>
 
