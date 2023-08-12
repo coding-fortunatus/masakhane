@@ -118,11 +118,12 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/all.min.js"></script>
-    <script>
-        function myFunction() {
-           var element = document.body;
-           element.classList.toggle("dark-mode");
+    <script type="text/javascript">
+        const autoScroll=()=>{
+            window.scrollBy(0,10);
+            let scrolldelay=setTimeout(autoScroll,20)
         }
+        autoScroll();
         </script>
 </body>
 </html>
