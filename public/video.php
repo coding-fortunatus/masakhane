@@ -13,9 +13,12 @@
                             $video_link = $row['video_link'];
 
                     ?>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fjOdtSu4Lm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <h3 class="title"><?php echo $video_title; ?></h3>
-                    <p class="desc"><?php echo $description; ?></p>
+                    <div class="col-md-12">
+                        <!-- <iframe src="v1.mp4" width="100%" height="500vh" style="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                        <iframe width="100%" height="500vh" src="<?php echo $video_link; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <h3 class="title"><?php echo $video_title; ?></h3>
+                        <p class="desc"><?php echo $description; ?></p>
+                    </div>
                 </div>
                 <?php
                         }
@@ -33,7 +36,7 @@
                         $video_link = $row['video_link'];
                ?>
                 <div class="vid active">
-                    <video src="video/<?php echo $video_link; ?>" muted></video>
+                    <iframe src="<?php echo $video_link; ?>" muted></iframe>
                         <h3 class="title"><?php echo $video_title; ?></h3>
                         <p class="desc"><?php echo $description; ?></p>
                 </div>
@@ -50,7 +53,7 @@
 
     <script>
         let listVideo = document.querySelectorAll('.video-list .vid');
-        let mainVideo = document.querySelector('.main-video video');
+        let mainVideo = document.querySelector('.main-video iframe');
         let title = document.querySelector('.main-video .title');
         let desc = document.querySelector('.main-video .desc');
 
