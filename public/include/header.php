@@ -15,9 +15,9 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg bg-light py-3 navbar-light">
-        <div class="container">
-            <a href="#" class="navbar-brand"><img src="images/masa.png" style="width: 50px; height: 50px;" alt=""></a>
+    <nav class="navbar sticky-top navbar-expand-lg bg-light py-3 navbar-light" style="height: fit-content">
+        <div class="container" style="height: fit-content">
+            <a href="#" class="navbar-brand"><img src="images/masa.png" style="width: 50px; height: 20%;" alt=""></a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myNav"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="myNav">
                 <ul class="navbar-nav ms-auto">
