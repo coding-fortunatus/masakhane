@@ -12,10 +12,11 @@
         <div class="row g-3 m-3">
             
             <?php
-            $query = "SELECT * FROM members";
+            $query = "SELECT * FROM members LIMIT 32";
             $get_data = mysqli_query($conn, $query);
             while($row = mysqli_fetch_assoc($get_data))
             {
+                $id = $row['id'];
                 $fullname = $row['fullname'];
                 $affiliation = $row['affiliation'];
                 $nationality = $row['nationality'];
@@ -118,11 +119,12 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/all.min.js"></script>
-    <script>
-        function myFunction() {
-           var element = document.body;
-           element.classList.toggle("dark-mode");
+    <script type="text/javascript">
+        const autoScroll=()=>{
+            window.scrollBy(0,10);
+            let scrolldelay=setTimeout(autoScroll,20)
         }
+        autoScroll();
         </script>
 </body>
 </html>
