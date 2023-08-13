@@ -9,7 +9,7 @@
 <div class="container m-10" style="background-color: transparent!important;">
     <div class="row g-3 m-3">
         <?php
-            $query = "SELECT * FROM members LIMIT 24";
+            $query = "SELECT * FROM members";
             $get_data = mysqli_query($conn, $query);
             while($row = mysqli_fetch_assoc($get_data))
             {
