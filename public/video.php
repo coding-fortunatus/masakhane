@@ -78,16 +78,6 @@
                 <h3 class="title"><?php echo $video_title; ?></h3>
                 <p class="desc"><?php echo $description; ?></p>
             </div>
-            <div class="vid active">
-                <!-- <video src="video/<?php // echo $video_link; ?>" muted></video> -->
-                <iframe src="<?php echo $video_link; ?>" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <h3 class="title"><?php echo $video_title; ?></h3>
-                <p class="desc"><?php echo $description; ?></p>
-            </div>
-
-
             <?php   }
 
 ?>
