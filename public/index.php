@@ -9,7 +9,7 @@
 <div class="container m-10" style="background-color: transparent!important;">
     <div class="row g-3 m-3">
         <?php
-            $query = "SELECT * FROM members LIMIT 32";
+            $query = "SELECT * FROM members LIMIT 24";
             $get_data = mysqli_query($conn, $query);
             while($row = mysqli_fetch_assoc($get_data))
             {
@@ -56,7 +56,8 @@
                                         <p><strong>Language(s) spoken:</strong> <?php echo $languages_spoken; ?></p>
                                         <p><strong>Language(s) working on:</strong> <?php echo $languages_working_on; ?>
                                         </p>
-                                        <p><strong>Interests:</strong> <?php echo $country_interesting; ?></p>
+                                        <p><strong>Country Points Of Interest:</strong>
+                                            <?php echo $country_interesting; ?></p>
                                     </section>
                                     <hr>
                                 </div>
@@ -80,11 +81,64 @@
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/all.min.js"></script>
 <script type="text/javascript">
-const autoScroll = () => {
-    window.scrollBy(0, 10);
-    let scrolldelay = setTimeout(autoScroll, 20)
+// let scrolldelay;
+// const autoScroll = () => {
+//     window.scrollBy(0, 10);
+//     let scrolldelay = setTimeout(autoScroll, 20)
+// }
+let scrollerID;
+let paused = true;
+let interval = 20;
+
+function startScroll() {
+    let id = setInterval(function() {
+        window.scrollBy(0, 10);
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            // end of page?
+            stopScroll();
+        }
+    }, interval);
+    return id;
 }
-autoScroll();
+
+function stopScroll() {
+    clearInterval(scrollerID);
+}
+
+
+const timeoutInMiliseconds = 5000;
+let timeoutId;
+
+function startTimer() {
+    // window.setTimeout returns an Id that can be used to start and stop a timer
+    timeoutId = window.setTimeout(doInactive, timeoutInMiliseconds)
+}
+
+function resetTimer() {
+    stopScroll()
+    paused = true
+    window.clearTimeout(timeoutId)
+    startTimer();
+}
+
+function doInactive() {
+    scrollerID = startScroll()
+    paused = false
+}
+
+function setupTimers() {
+    document.addEventListener("mousemove", resetTimer, false);
+    document.addEventListener("mousedown", resetTimer, false);
+    document.addEventListener("keypress", resetTimer, false);
+    document.addEventListener("touchmove", resetTimer, false);
+
+    startTimer();
+}
+
+
+setupTimers()
+
+// autoScroll();
 </script>
 </body>
 

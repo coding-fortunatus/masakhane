@@ -11,9 +11,7 @@
 }
 .navbar {
 	background-color: #f2f0e9 !important;
-}
-.navbar-brand {
-	padding-top: 20px;
+	height: auto;
 }
 
 .contain {
@@ -29,9 +27,8 @@
 	border-radius: 5px;
 	padding: 10px;
 }
-.contain .main-video .video iframe {
-	width: 500vw;
-	height: 1000;
+.contain .main-video iframe {
+	width: 100%;
 	border-radius: 5px;
 }
 .contain .main-video .title {
@@ -44,23 +41,23 @@
 .contain .video-list {
 	background: #fff;
 	border-radius: 5px;
-	height: 520px;
+	height: 510px;
 	overflow-y: scroll;
 }
 .contain .video-list::-webkit-scrollbar {
-	width: 7px;
+	width: 5px;
 }
 .contain .video-list::-webkit-scrollbar-track {
-	border-radius: 50px;
+	border-radius: 10px;
 	background: #ccc;
 }
 .contain .video-list::-webkit-scrollbar-thumb {
 	background: #667;
-	border-radius: 50px;
+	border-radius: 10px;
 }
 
-.contain .video-list .vid video {
-	width: 100px;
+.contain .video-list .vid iframe {
+	width: auto;
 	border-radius: 5px;
 }
 
@@ -69,7 +66,7 @@
 
 	align-items: center;
 	gap: 15px;
-	background: #f7f7f7;
+	background: #fff;
 	border-radius: 5px;
 	margin: 10px;
 	padding: 10px;
@@ -108,7 +105,7 @@
 		padding: 10px;
 	}
 	.contain .video-list .vid iframe {
-		width: 100px;
+		width: auto;
 		border-radius: 5px;
 	}
 	.contain .video-list .vid p {
@@ -124,8 +121,8 @@
 	.contain {
 		grid-template-columns: 1fr;
 	}
-	.contain .video-list .vid video {
-		width: 200px;
+	.contain .video-list .vid iframe {
+		width: auto;
 		border-radius: 5px;
 	}
 }
